@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "SemanticModel",
+    "displayName": "Analyse des Réclamations d'Assurance Automobile"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "e61d73e1-d8f1-478f-bcf2-d2fcce8d41cc"
+  }
+}

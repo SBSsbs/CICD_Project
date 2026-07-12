@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "Analyse des Réclamations d'Assurance Automobile"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "d5314926-ccc7-44ad-902c-c260fdde9959"
+  }
+}
