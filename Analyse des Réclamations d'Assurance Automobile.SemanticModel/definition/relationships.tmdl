@@ -1,5 +1,0 @@
-relationship 40fc5b42-9ced-4008-9c1e-bb0f93f30d03
-	joinOnDateBehavior: datePartOnly
-	fromColumn: Data.Date_De_Naissance
-	toColumn: LocalDateTable_2aca6a31-6abc-48c7-8cba-2be224c5501d.Date
-
