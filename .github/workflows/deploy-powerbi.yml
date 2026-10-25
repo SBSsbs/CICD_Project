@@ -1,0 +1,27 @@
+name: Deploy Power BI PBIP
+on:
+  push:
+    branches:
+      - main
+jobs:
+  deploy:
+    runs-on: windows-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - name: Install MicrosoftPowerBIMgmt module
+        shell: pwsh
+        run: |
+          Install-Module MicrosoftPowerBIMgmt -Scope CurrentUser -Force -AllowClobber
+      - name: Login and list workspace reports
+        shell: pwsh
+        run: |
+          $securePassword = ConvertTo-SecureString "${{ secrets.PBI_CLIENT_SECRET }}" -AsPlainText -Force
+          $credential = New-Object System.Management.Automation.PSCredential("${{ secrets.PBI_CLIENT_ID }}", $securePassword)
+          Connect-PowerBIServiceAccount `
+            -ServicePrincipal `
+            -Credential $credential `
+            -Tenant "${{ secrets.PBI_TENANT_ID }}"
+          $workspaceId = "${{ secrets.PBI_WORKSPACE_ID }}"
+          $url = "groups/$workspaceId/reports"
+          Invoke-PowerBIRestMethod -Url $url -Method Get
