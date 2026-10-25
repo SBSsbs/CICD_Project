@@ -1,7 +1,7 @@
 $workspaceName = "Assurance Véhicule – DEV"
 $projectRoot = $env:GITHUB_WORKSPACE
-$semanticModelPath = Join-Path $projectRoot "Analyse des Réclamations d'Assurance Automobile.SemanticModel"
-$reportPath = Join-Path $projectRoot "Analyse des Réclamations d'Assurance Automobile.Report"
+$semanticModelPath = Join-Path $projectRoot "Analyse_des_RAA_Init.SemanticModel"
+$reportPath = Join-Path $projectRoot "Analyse_des_RAA_Init.Report"
 New-Item -ItemType Directory -Path ".\modules" -ErrorAction SilentlyContinue | Out-Null
 Invoke-WebRequest `
   -Uri "https://raw.githubusercontent.com/microsoft/Analysis-Services/master/pbidevmode/fabricps-pbip/FabricPS-PBIP.psm1" `
